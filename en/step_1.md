@@ -23,20 +23,21 @@ Youtube embed
       .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
         stroke: #231f20;
         stroke-miterlimit: 10;
-        transition: transform 5s 5s; /* 5s duration, 5s delay */
+        animation: shuffle 10s infinite; /* Animation for shuffling with loop */
       }
-      .cls-1 { fill: #00aeef; }
-      .cls-2 { fill: #00a651; }
-      .cls-3 { fill: #fff200; }
-      .cls-4 { fill: #ed1c24; }
-      .cls-5 { fill: #2e3192; }
-
-      /* Updated translations */
-      #card1 { transform: translateX(-138.34px); } /* Move blue left to the first position */
-      #card2 { transform: translateX(0); }         /* Green stays in its place, second position */
-      #card3 { transform: translateX(-69.67px); }  /* Move yellow left to the middle */
-      #card4 { transform: translateX(69.67px); }   /* Move red right to the second last position */
-      #card5 { transform: translateX(138.34px); }  /* Move purple right to the last position */
+      @keyframes shuffle {
+        0%, 100% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(var(--shuffle));
+        }
+      }
+      .cls-1 { fill: #00aeef; --shuffle: -110.34px; } /* Blue moves left */
+      .cls-2 { fill: #00a651; --shuffle: 22.68px; }   /* Green moves right */
+      .cls-3 { fill: #fff200; --shuffle: -69.67px; }  /* Yellow moves left */
+      .cls-4 { fill: #ed1c24; --shuffle: 22.68px; }   /* Red moves right */
+      .cls-5 { fill: #2e3192; --shuffle: -110.34px; } /* Purple moves left */
     </style>
   </defs>
   <rect id="card4" class="cls-4" x=".5" y=".5" width="22.68" height="32.85"/>
@@ -45,3 +46,4 @@ Youtube embed
   <rect id="card2" class="cls-2" x="104.25" y=".5" width="22.68" height="32.85"/>
   <rect id="card1" class="cls-1" x="138.84" y=".5" width="22.68" height="32.85"/>
 </svg>
+
