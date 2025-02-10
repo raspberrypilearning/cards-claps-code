@@ -1,11 +1,9 @@
-title: default-project-template
+title: Cards, Claps, and Code
 hero_image: images/banner.png
-description: default-project-template description
+description: unplugged activity using cards and claps to create a programming language.
 version: 1
 listed: false
 copyedit: false
 last_tested: "2025-01-01"
 steps:
-  - title: What you will make
-  - title: Step title
-  - title: What can you do now?
+  - title: Cards, Claps, and Code
